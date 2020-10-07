@@ -1,8 +1,10 @@
-import React, {useState, useRef} from 'react'
+import React, { useState, useRef } from 'react'
+import { propTypes } from 'react-bootstrap/esm/Image';
 import styled from 'styled-components'
+import Background from './Background';
 
-function ExperienceBox({img, title, description, collaboratorsAmount, technologies, }) {
-    
+function ExperienceBox({ img, title, description, collaboratorsAmount, technologies }) {
+
     const [deployed, setDeployed] = useState(false);
 
     const deploy = () => {
@@ -23,25 +25,25 @@ function ExperienceBox({img, title, description, collaboratorsAmount, technologi
     }
 
 
-    return(
+    return (
         <MainContainer>
-            
+
             <div className="d-flex justify-content-around align-items-center w-100">
                 {
                     img
-                    ?
-                    getImg()
-                    :
-                    null
+                        ?
+                        getImg()
+                        :
+                        null
                 }
-                <h2>issou</h2>
+                <h2>{title}</h2>
                 <i className="fa fa-chevron-down" onClick={deploy}></i>
             </div>
 
             {deployed ? <hr className="w-100 m-auto" /> : null}
 
         </MainContainer>
-)
+    )
 
 }
 const MainContainer = styled.div`
